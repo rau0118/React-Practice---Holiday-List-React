@@ -21,14 +21,14 @@ class App extends Component {
     { name: 'Agra', country: 'India' },
     { name: 'Dalhousie', country: 'India' },
     { name: 'Coorg', country: 'India' },
-    { name: 'Rome', country: 'Italy' },
-    { name: 'Milan', country: 'Italy' },
-    { name: 'Venice', country: 'Italy' },
+   // { name: 'Rome', country: 'Italy' },
+    //{ name: 'Milan', country: 'Italy' },
+    //{ name: 'Venice', country: 'Italy' },
     { name: 'Varanasai', country: 'India' },
     { name: 'Jaipur', country: 'India' },
-    { name: 'The Hofburg', country: 'Austria' },
-    { name: 'Belvedere Palace', country: 'Austria' },
-    { name: 'St. Stephen Cathedral', country: 'Austria' },
+    //{ name: 'The Hofburg', country: 'Austria' },
+    //{ name: 'Belvedere Palace', country: 'Austria' },
+    //{ name: 'St. Stephen Cathedral', country: 'Austria' },
     { name: 'Kahna National Park', country: 'India' },
     { name: 'Amritsar', country: 'India' },
     { name: 'Mussoorie', country: 'India' },
@@ -41,6 +41,12 @@ class App extends Component {
     return (
       <div id="main">
         {/* Do not remove the main div */}
+        <ol>
+          {this.cityList.filter( (city)=>city.country=='India').map( (city,index)=>{
+            const key = `location${index + 1}`
+            return <li key={key}>{city.name}</li>;
+          })}
+        </ol>
       </div>
     )
   }
